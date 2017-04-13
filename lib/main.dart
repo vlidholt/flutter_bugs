@@ -4,6 +4,7 @@ import 'bug_faded_text.dart';
 import 'bug_ink_response.dart';
 import 'bug_primary_scroll_controller.dart';
 import 'bug_tab_bar.dart';
+import 'bug_tab_selector.dart';
 
 void main() {
   runApp(new MyApp());
@@ -50,6 +51,11 @@ class MyHomePage extends StatelessWidget {
             title: new Text('bug_faded_text'),
             subtitle: new Text('TextOverflow.fade breaks when scrolling'),
             onTap: () { _openTest(context, new BugFadedText()); }
+          ),
+          new ListTile(
+            title: new Text('bug_tab_selector'),
+            subtitle: new Text('TextOverflow.fade breaks when scrolling'),
+            onTap: () { _openTest(context, new BugTabSelector()); }
           ),
         ],
       ),

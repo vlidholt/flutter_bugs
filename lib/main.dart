@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'bug_faded_text.dart';
-import 'bug_ink_response.dart';
 import 'bug_primary_scroll_controller.dart';
-import 'bug_tab_bar.dart';
-import 'bug_tab_selector.dart';
+import 'bug_cupertino_reload.dart';
 
 void main() {
   runApp(new MyApp());
@@ -26,36 +23,21 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Flutter Bugs'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter Bugs'),
       ),
-      body: new ListView(
+      body: ListView(
         children: <Widget>[
-          new ListTile(
-            title: new Text('bug_ink_response'),
-            subtitle: new Text('Touches are incorrectly cancelled'),
-            onTap: () { _openTest(context, new BugInkResponse()); }
+          ListTile(
+            title: Text('bug_primary_scroll_controller'),
+            subtitle: Text('Blocks touch input'),
+            onTap: () { _openTest(context, BugPrimaryScrollController()); }
           ),
-          new ListTile(
-            title: new Text('bug_primary_scroll_controller'),
-            subtitle: new Text('Blocks touch input'),
-            onTap: () { _openTest(context, new BugPrimaryScrollController()); }
-          ),
-          new ListTile(
-            title: new Text('bug_tab_bar'),
-            subtitle: new Text('Scrolling of TabBar is incorrect'),
-            onTap: () { _openTest(context, new BugTabBar()); }
-          ),
-          new ListTile(
-            title: new Text('bug_faded_text'),
-            subtitle: new Text('TextOverflow.fade breaks when scrolling'),
-            onTap: () { _openTest(context, new BugFadedText()); }
-          ),
-          new ListTile(
-            title: new Text('bug_tab_selector'),
-            subtitle: new Text('TextOverflow.fade breaks when scrolling'),
-            onTap: () { _openTest(context, new BugTabSelector()); }
+          ListTile(
+            title: Text('bug_cupertino_reload'),
+            subtitle: Text('Cupertino Reload fails'),
+            onTap: () { _openTest(context, BugCupertinoReload()); }
           ),
         ],
       ),

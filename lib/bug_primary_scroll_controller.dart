@@ -11,7 +11,7 @@ class BugPrimaryScrollController extends StatelessWidget {
           height: 150.0,
           child: new Center(
             child: new Text(
-              'iOS issue only. Touches are not register in the top part of the first list item. primary is set to false',
+              'iOS issue only. Touches are not registered in the top part of the first list item. primary is set to false. Issue #15569',
               style: Theme.of(context).textTheme.body1,
             )
           ),
